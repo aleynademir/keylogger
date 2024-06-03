@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f922f95-377c-41fa-bce8-b9deebfd4529" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6f922f95-377c-41fa-bce8-b9deebfd4529" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/decrypt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encryption.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/key_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/key_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keylogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/keylogger.py" afterDir="false" />
     </list>
@@ -45,7 +43,9 @@
     "Python.key_manager.executor": "Run",
     "Python.keylogger.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowCommit.ShowToolbar": "false"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -64,6 +64,19 @@
       <option name="presentableId" value="Default" />
       <updated>1717405719987</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1717427760763</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717427760764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
