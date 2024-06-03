@@ -25,10 +25,11 @@ def main():
     username, password = get_user_credentials()
     if verify_user(username, password):
         with open("e_log.txt", "rb") as file:
-            encrypted_contents = file.readlines()  # Satır satır okuyarak her bir bloğu alıyoruz
+            encrypted_contents = file.read().split(b'|')  # Ayırıcıyı kullanarak şifrelenmiş blokları ayırıyoruz
         decrypted_contents = ""
         for encrypted_content in encrypted_contents:
-            decrypted_contents += decrypt_log(encrypted_content.strip())  # Satır sonlarını kaldırarak çözüyoruz
+            if encrypted_content:  # Boş olmayan içerikleri çöz
+                decrypted_contents += decrypt_log(encrypted_content)
         print("Decryption successful. Log content:")
         print(decrypted_contents)
     else:

