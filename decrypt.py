@@ -24,11 +24,13 @@ def decrypt_log(encrypted_content):
 def main():
     username, password = get_user_credentials()
     if verify_user(username, password):
-        with open("log.txt", "rb") as file:
-            encrypted_content = file.read()
-        decrypted_content = decrypt_log(encrypted_content)
+        with open("e_log.txt", "rb") as file:
+            encrypted_contents = file.readlines()  # Satır satır okuyarak her bir bloğu alıyoruz
+        decrypted_contents = ""
+        for encrypted_content in encrypted_contents:
+            decrypted_contents += decrypt_log(encrypted_content.strip())  # Satır sonlarını kaldırarak çözüyoruz
         print("Decryption successful. Log content:")
-        print(decrypted_content)
+        print(decrypted_contents)
     else:
         print("Invalid username or password.")
 
