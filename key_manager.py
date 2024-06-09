@@ -11,7 +11,6 @@ def load_key():
     return key
 
 def load_user_credentials():
-    # Kullanıcı adı ve şifresini döndürme
     return "aleyna", "123456"
 
 if __name__ == "__main__":
