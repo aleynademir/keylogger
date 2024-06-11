@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f922f95-377c-41fa-bce8-b9deebfd4529" name="Changes" comment="fixed active window issue" />
+    <list default="true" id="6f922f95-377c-41fa-bce8-b9deebfd4529" name="Changes" comment="fixed active window issue">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/decrypt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encryption_key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/encryption_key.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keylogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/keylogger.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,18 +40,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.decrypt.executor&quot;: &quot;Run&quot;,
-    &quot;Python.key_manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.keylogger.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ToolWindowCommit.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.decrypt.executor": "Run",
+    "Python.key_manager.executor": "Run",
+    "Python.keylogger.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.customizations"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -119,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717953968243</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed active window issue">
+      <option name="closed" value="true" />
+      <created>1717954017495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717954017495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
